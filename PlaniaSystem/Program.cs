@@ -1,9 +1,19 @@
+using Blazorise;
+using Blazorise.Material;
+using Blazorise.Icons.Material;
 using PlaniaSystem.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents()
+builder.Services
+    .AddBlazorise(options =>
+    {
+        options.Immediate = true;
+    })
+    .AddMaterialProviders()
+    .AddMaterialIcons()
+    .AddRazorComponents()
     .AddInteractiveServerComponents();
 
 var app = builder.Build();
