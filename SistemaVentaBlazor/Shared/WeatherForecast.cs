@@ -1,4 +1,4 @@
-namespace SistemaVentaBlazor.Shared
+namespace SistemaPlania.Shared
 {
     public class WeatherForecast
     {

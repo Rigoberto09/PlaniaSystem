@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SistemaVentaBlazor.Server.Models;
+namespace SistemaPlania.Server.Models;
 
 public partial class Rol
 {

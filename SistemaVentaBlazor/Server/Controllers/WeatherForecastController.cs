@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using SistemaVentaBlazor.Shared;
+using SistemaPlania.Shared;
 
-namespace SistemaVentaBlazor.Server.Controllers
+namespace SistemaPlania.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]

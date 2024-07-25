@@ -1,13 +1,13 @@
-global using SistemaVentaBlazor.Client.Servicios.Contrato;
-global using SistemaVentaBlazor.Shared;
+global using SistemaPlania.Client.Servicios.Contrato;
+global using SistemaPlania.Shared;
 using CurrieTechnologies.Razor.SweetAlert2;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
-using SistemaVentaBlazor.Client;
-using SistemaVentaBlazor.Client.Servicios.Implementacion;
-//using SistemaVentaBlazor.Server.Email;
+using SistemaPlania.Client;
+using SistemaPlania.Client.Servicios.Implementacion;
+//using SistemaPlania.Server.Email;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

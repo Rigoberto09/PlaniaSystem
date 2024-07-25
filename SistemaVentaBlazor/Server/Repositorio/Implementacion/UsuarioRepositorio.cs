@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SistemaVentaBlazor.Server.Models;
-using SistemaVentaBlazor.Server.Repositorio.Contrato;
+using SistemaPlania.Server.Models;
+using SistemaPlania.Server.Repositorio.Contrato;
 using System.Linq.Expressions;
 
-namespace SistemaVentaBlazor.Server.Repositorio.Implementacion
+namespace SistemaPlania.Server.Repositorio.Implementacion
 {
     public class UsuarioRepositorio : IUsuarioRepositorio
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SistemaVentaBlazor.Client.Utilidades
+namespace SistemaPlania.Client.Utilidades
 {
     public class UsuarioLogin
     {

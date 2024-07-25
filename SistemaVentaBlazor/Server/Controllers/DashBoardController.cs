@@ -2,10 +2,10 @@
 using Azure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SistemaVentaBlazor.Server.Repositorio.Contrato;
-using SistemaVentaBlazor.Shared;
+using SistemaPlania.Server.Repositorio.Contrato;
+using SistemaPlania.Shared;
 
-namespace SistemaVentaBlazor.Server.Controllers
+namespace SistemaPlania.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

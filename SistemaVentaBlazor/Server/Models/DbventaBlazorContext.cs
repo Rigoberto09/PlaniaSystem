@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace SistemaVentaBlazor.Server.Models;
+namespace SistemaPlania.Server.Models;
 
 public partial class DbventaBlazorContext : DbContext
 {

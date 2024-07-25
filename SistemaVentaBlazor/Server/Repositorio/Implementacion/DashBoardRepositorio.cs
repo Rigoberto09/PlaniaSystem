@@ -1,8 +1,8 @@
-﻿using SistemaVentaBlazor.Server.Models;
-using SistemaVentaBlazor.Server.Repositorio.Contrato;
+﻿using SistemaPlania.Server.Models;
+using SistemaPlania.Server.Repositorio.Contrato;
 using System.Globalization;
 
-namespace SistemaVentaBlazor.Server.Repositorio.Implementacion
+namespace SistemaPlania.Server.Repositorio.Implementacion
 {
     public class DashBoardRepositorio : IDashBoardRepositorio
     {

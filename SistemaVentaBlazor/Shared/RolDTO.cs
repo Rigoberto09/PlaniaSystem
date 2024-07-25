@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaVentaBlazor.Shared
+namespace SistemaPlania.Shared
 {
     public class RolDTO
     {

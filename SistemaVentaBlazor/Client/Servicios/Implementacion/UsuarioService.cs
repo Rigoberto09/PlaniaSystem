@@ -1,10 +1,10 @@
-﻿using SistemaVentaBlazor.Client.Utilidades;
+﻿using SistemaPlania.Client.Utilidades;
 using System.Net.Http.Json;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace SistemaVentaBlazor.Client.Servicios.Implementacion
+namespace SistemaPlania.Client.Servicios.Implementacion
 {
     public class UsuarioService : IUsuarioService
     {

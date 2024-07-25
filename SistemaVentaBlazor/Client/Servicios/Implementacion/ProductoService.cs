@@ -1,7 +1,7 @@
 ﻿
 using System.Net.Http.Json;
 
-namespace SistemaVentaBlazor.Client.Servicios.Implementacion
+namespace SistemaPlania.Client.Servicios.Implementacion
 {
     public class ProductoService : IProductoService
     {

@@ -1,4 +1,4 @@
-﻿namespace SistemaVentaBlazor.Client.Servicios.Contrato
+﻿namespace SistemaPlania.Client.Servicios.Contrato
 {
     public interface IVentaService
     {

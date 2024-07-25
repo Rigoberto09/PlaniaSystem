@@ -1,6 +1,6 @@
-﻿using SistemaVentaBlazor.Client.Utilidades;
+﻿using SistemaPlania.Client.Utilidades;
 
-namespace SistemaVentaBlazor.Client.Servicios.Contrato
+namespace SistemaPlania.Client.Servicios.Contrato
 {
     public interface IUsuarioService
     {

@@ -1,8 +1,8 @@
-﻿using SistemaVentaBlazor.Client.Servicios.Contrato;
-using SistemaVentaBlazor.Shared;
+﻿using SistemaPlania.Client.Servicios.Contrato;
+using SistemaPlania.Shared;
 using System.Net.Http.Json;
 
-namespace SistemaVentaBlazor.Client.Servicios.Implementacion
+namespace SistemaPlania.Client.Servicios.Implementacion
 {
     public class CategoriaService : ICategoriaService
     {

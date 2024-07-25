@@ -1,11 +1,11 @@
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-using SistemaVentaBlazor.Server.Email;
-using SistemaVentaBlazor.Server.Models;
-using SistemaVentaBlazor.Server.Repositorio.Contrato;
-using SistemaVentaBlazor.Server.Repositorio.Implementacion;
-using SistemaVentaBlazor.Server.Utilidades;
+using SistemaPlania.Server.Email;
+using SistemaPlania.Server.Models;
+using SistemaPlania.Server.Repositorio.Contrato;
+using SistemaPlania.Server.Repositorio.Implementacion;
+using SistemaPlania.Server.Utilidades;
 
 var builder = WebApplication.CreateBuilder(args);
 

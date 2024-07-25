@@ -1,4 +1,4 @@
-﻿namespace SistemaVentaBlazor.Server.Repositorio.Contrato
+﻿namespace SistemaPlania.Server.Repositorio.Contrato
 {
     public interface IDashBoardRepositorio
     {

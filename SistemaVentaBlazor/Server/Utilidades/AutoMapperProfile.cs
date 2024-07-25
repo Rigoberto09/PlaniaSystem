@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using SistemaVentaBlazor.Server.Models;
-using SistemaVentaBlazor.Shared;
+using SistemaPlania.Server.Models;
+using SistemaPlania.Shared;
 using System.Globalization;
 
-namespace SistemaVentaBlazor.Server.Utilidades
+namespace SistemaPlania.Server.Utilidades
 {
     public class AutoMapperProfile : Profile
     {

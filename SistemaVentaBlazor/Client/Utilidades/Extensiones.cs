@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
-namespace SistemaVentaBlazor.Client.Utilidades
+namespace SistemaPlania.Client.Utilidades
 {
     public static class Extensiones
     {
