@@ -1,0 +1,66 @@
+﻿@page "/page/Deduccion"
+@* @page "/" *@
+@* @using MudBlazor
+@using MudBlazor.Services
+ *@
+<MudGrid>
+    <MudItem xs="12">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">Modal</MudPaper>
+    </MudItem>
+
+    <MudItem xs="12" sm="3">
+        <div class="margenes" id="margen">
+            <MudPaper>
+
+                <MudSelect @bind-Value="enumValue" id="paddin" Label="Tipo de Deduccion" OpenIcon="@Icons.Material.Filled.LocalDrink" AdornmentColor="Color.Secondary">
+                    @foreach (Drink nombreDeduccion in Enum.GetValues(typeof(Drink)))
+                    {
+                        <MudSelectItem Value="@nombreDeduccion">@nombreDeduccion</MudSelectItem>
+                    }
+                </MudSelect>
+
+            </MudPaper>
+        </div>
+    </MudItem>
+    <MudItem xs="12" sm="3">
+        <div class="margenes" id="margen">
+            <MudPaper >
+                <MudNumericField HideSpinButtons="true" T="Decimal"  @bind-Value="monto" Label="Monto" Variant="Variant.Outlined" Step=".2M" />
+
+            </MudPaper>
+        </div>
+
+    </MudItem>
+    <MudItem xs="12" sm="3">
+        <div class="margenes" id="margen">
+            <MudPaper>
+                <MudNumericField HideSpinButtons="true" T="Decimal"  @bind-Value="DecimalValue" Label="Cant. Cuotas" Variant="Variant.Outlined" Step=".2M" />
+
+            </MudPaper>
+        </div>
+
+    </MudItem>
+    <MudItem xs="12" sm="3">
+        <div class="margenes" id="margen">
+
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" @OnClick="sumar">Contar</MudButton>
+        </div>
+
+    </MudItem>
+
+    @* <MudItem xs="12" sm="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=12 sm=6</MudPaper>
+    </MudItem>
+    <MudItem xs="6" sm="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=6 sm=3</MudPaper>
+    </MudItem>
+    <MudItem xs="6" sm="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=6 sm=3</MudPaper>
+    </MudItem>
+    <MudItem xs="6" sm="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=6 sm=3</MudPaper>
+    </MudItem>
+    <MudItem xs="6" sm="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=6 sm=3</MudPaper>
+    </MudItem> *@
+</MudGrid>
