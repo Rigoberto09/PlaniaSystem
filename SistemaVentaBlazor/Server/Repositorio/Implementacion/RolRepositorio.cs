@@ -1,22 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SistemaPlania.Server.DataBase;
 using SistemaPlania.Server.Models;
 using SistemaPlania.Server.Repositorio.Contrato;
 
 namespace SistemaPlania.Server.Repositorio.Implementacion
 {
     public class RolRepositorio : IRolRepositorio
-    {
-        private readonly DbventaBlazorContext _dbContext;
+    {   
+        private readonly DbventaBlazorContext _context;
 
-        public RolRepositorio(DbventaBlazorContext dbContext)
+        public RolRepositorio(DbventaBlazorContext context)
         {
-            _dbContext = dbContext;
+            _context = context;
         }
         public async Task<List<Rol>> Lista()
         {
             try
             {
-                return await _dbContext.Rols.ToListAsync();
+                return await _context.Rols.ToListAsync();
             }
             catch
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SistemaPlania.Server.DataBase;
 using SistemaPlania.Server.Models;
 using SistemaPlania.Server.Repositorio.Contrato;
 using System.Linq.Expressions;
@@ -16,21 +17,30 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
 
         public async Task<IQueryable<Usuario>> Consultar(Expression<Func<Usuario, bool>> filtro = null)
         {
-            IQueryable<Usuario> queryEntidad = filtro == null ? _dbContext.Usuarios : _dbContext.Usuarios.Where(filtro);
-            return queryEntidad;
+            try
+            {
+                // Devuelve un IQueryable, pero sin evaluación de la consulta hasta que se materialice
+                IQueryable<Usuario> queryEntidad = filtro == null ? _dbContext.Usuarios : _dbContext.Usuarios.Where(filtro);
+                return queryEntidad;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores más robusto
+                throw new Exception("Error al consultar usuarios", ex);
+            }
         }
 
         public async Task<Usuario> Crear(Usuario entidad)
         {
             try
             {
-                _dbContext.Set<Usuario>().Add(entidad);
+                await _dbContext.Set<Usuario>().AddAsync(entidad); // Usa AddAsync en lugar de Add
                 await _dbContext.SaveChangesAsync();
                 return entidad;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Error al crear usuario", ex);
             }
         }
 
@@ -42,9 +52,9 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
                 await _dbContext.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Error al editar usuario", ex);
             }
         }
 
@@ -56,9 +66,9 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
                 await _dbContext.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Error al eliminar usuario", ex);
             }
         }
 
@@ -68,9 +78,9 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
             {
                 return await _dbContext.Usuarios.ToListAsync();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Error al obtener la lista de usuarios", ex);
             }
         }
 
@@ -80,9 +90,9 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
             {
                 return await _dbContext.Usuarios.Where(filtro).FirstOrDefaultAsync();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Error al obtener usuario", ex);
             }
         }
     }

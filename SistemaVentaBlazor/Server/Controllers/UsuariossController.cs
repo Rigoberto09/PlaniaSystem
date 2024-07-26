@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using SistemaPlania.Server.DataBase;
 using SistemaPlania.Server.Models;
+
 
 namespace SistemaPlania.Server.Controllers
 {
@@ -13,6 +15,7 @@ namespace SistemaPlania.Server.Controllers
     {
         private readonly DbventaBlazorContext _context;
 
+        // Constructor inyectando el DbContext
         public UsuariossController(DbventaBlazorContext context)
         {
             _context = context;
@@ -45,11 +48,7 @@ namespace SistemaPlania.Server.Controllers
         }
 
         // GET: Usuarioss/Create
-        public IActionResult Create()
-        {
-            ViewData["IdRol"] = new SelectList(_context.Rols, "IdRol", "IdRol");
-            return View();
-        }
+  
 
         // POST: Usuarioss/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.

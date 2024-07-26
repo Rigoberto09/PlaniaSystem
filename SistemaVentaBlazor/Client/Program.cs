@@ -1,5 +1,6 @@
 global using SistemaPlania.Client.Servicios.Contrato;
 global using SistemaPlania.Shared;
+//global using SistemaPlania.Server;
 using CurrieTechnologies.Razor.SweetAlert2;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Components.Web;

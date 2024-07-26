@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SistemaPlania.Server.DataBase;
 using SistemaPlania.Server.Models;
 using SistemaPlania.Server.Repositorio.Contrato;
 
@@ -16,7 +17,7 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
         {
             try
             {
-                return await _dbContext.Categoria.ToListAsync();
+                return await _dbContext.Categorias.ToListAsync();
             }
             catch
             {

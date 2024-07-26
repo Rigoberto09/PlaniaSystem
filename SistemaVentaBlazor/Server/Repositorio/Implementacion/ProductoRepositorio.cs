@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SistemaPlania.Server.DataBase;
 using SistemaPlania.Server.Models;
 using SistemaPlania.Server.Repositorio.Contrato;
 using System.Linq.Expressions;

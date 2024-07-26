@@ -1,4 +1,5 @@
-﻿using SistemaPlania.Server.Models;
+﻿using SistemaPlania.Server.DataBase;
+using SistemaPlania.Server.Models;
 using SistemaPlania.Server.Repositorio.Contrato;
 using System.Globalization;
 
@@ -6,10 +7,11 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
 {
     public class DashBoardRepositorio : IDashBoardRepositorio
     {
-        private readonly DbventaBlazorContext _dbcontext;
+
+        private readonly DbventaBlazorContext _context;
         public DashBoardRepositorio(DbventaBlazorContext context)
         {
-            _dbcontext = context;
+            _context = context;
         }
 
         public async Task<int> TotalVentasUltimaSemana()
@@ -17,15 +19,15 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
             int total = 0;
             try
             {
-                IQueryable<Venta> _ventaQuery = _dbcontext.Venta.AsQueryable();
+                IQueryable<Venta> _ventaQuery = _context.Ventas.AsQueryable();
 
                 if (_ventaQuery.Count() > 0)
                 {
-                    DateTime? ultimaFecha = _dbcontext.Venta.OrderByDescending(v => v.FechaRegistro).Select(v => v.FechaRegistro).First();
+                    DateTime? ultimaFecha = _context.Ventas.OrderByDescending(v => v.FechaRegistro).Select(v => v.FechaRegistro).First();
 
                     ultimaFecha = ultimaFecha.Value.AddDays(-7);
 
-                    IQueryable<Venta> query = _dbcontext.Venta.Where(v => v.FechaRegistro.Value.Date >= ultimaFecha.Value.Date);
+                    IQueryable<Venta> query = _context.Ventas.Where(v => v.FechaRegistro.Value.Date >= ultimaFecha.Value.Date);
                     total = query.Count();
                 }
 
@@ -41,13 +43,13 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
             decimal resultado = 0;
             try
             {
-                IQueryable<Venta> _ventaQuery = _dbcontext.Venta.AsQueryable();
+                IQueryable<Venta> _ventaQuery = _context.Ventas.AsQueryable();
 
                 if (_ventaQuery.Count() > 0)
                 {
-                    DateTime? ultimaFecha = _dbcontext.Venta.OrderByDescending(v => v.FechaRegistro).Select(v => v.FechaRegistro).First();
+                    DateTime? ultimaFecha = _context.Ventas.OrderByDescending(v => v.FechaRegistro).Select(v => v.FechaRegistro).First();
                     ultimaFecha = ultimaFecha.Value.AddDays(-7);
-                    IQueryable<Venta> query = _dbcontext.Venta.Where(v => v.FechaRegistro.Value.Date >= ultimaFecha.Value.Date);
+                    IQueryable<Venta> query = _context.Ventas.Where(v => v.FechaRegistro.Value.Date >= ultimaFecha.Value.Date);
 
                     resultado = query
                          .Select(v => v.Total)
@@ -68,7 +70,7 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
         {
             try
             {
-                IQueryable<Producto> query = _dbcontext.Productos;
+                IQueryable<Producto> query = _context.Productos;
                 int total = query.Count();
                 return total;
             }
@@ -83,13 +85,13 @@ namespace SistemaPlania.Server.Repositorio.Implementacion
             Dictionary<string, int> resultado = new Dictionary<string, int>();
             try
             {
-                IQueryable<Venta> _ventaQuery = _dbcontext.Venta.AsQueryable();
+                IQueryable<Venta> _ventaQuery = _context.Ventas.AsQueryable();
                 if (_ventaQuery.Count() > 0)
                 {
-                    DateTime? ultimaFecha = _dbcontext.Venta.OrderByDescending(v => v.FechaRegistro).Select(v => v.FechaRegistro).First();
+                    DateTime? ultimaFecha = _context.Ventas.OrderByDescending(v => v.FechaRegistro).Select(v => v.FechaRegistro).First();
                     ultimaFecha = ultimaFecha.Value.AddDays(-7);
 
-                    IQueryable<Venta> query = _dbcontext.Venta.Where(v => v.FechaRegistro.Value.Date >= ultimaFecha.Value.Date);
+                    IQueryable<Venta> query = _context.Ventas.Where(v => v.FechaRegistro.Value.Date >= ultimaFecha.Value.Date);
 
                     resultado = query
                         .GroupBy(v => v.FechaRegistro.Value.Date).OrderBy(g => g.Key)

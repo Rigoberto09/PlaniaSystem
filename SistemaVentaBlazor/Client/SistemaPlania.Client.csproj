@@ -15,10 +15,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.7" PrivateAssets="all" />
     <PackageReference Include="MudBlazor" Version="7.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    
   </ItemGroup>
 
   <ItemGroup>
+    <!--<ProjectReference Include="..\Server\SistemaPlania.Server.csproj" />-->
     <ProjectReference Include="..\Shared\SistemaPlania.Shared.csproj" />
-  </ItemGroup>
-
-</Project>
+  </ItemGroup></Project>

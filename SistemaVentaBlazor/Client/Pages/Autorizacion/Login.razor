@@ -1,6 +1,6 @@
 ﻿@page "/"
+
 @inject NavigationManager _navigationManager
-@inject IUsuarioService _usuarioServicio
 
 @layout LoginLayout
 
@@ -41,44 +41,5 @@
 
 
 @code {
-    UsuarioLogin usuarioLogin = new UsuarioLogin();
-    string myImageClass { get; set; } = "d-none";
-    string myAlert { get; set; } = "d-none";
-    bool disableButton { get; set; } = false;
-
-    bool PasswordVisibility;
-    InputType PasswordInput = InputType.Password;
-    string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
-
-    void TogglePasswordVisibility()
-    {
-        @if (PasswordVisibility)
-        {
-            PasswordVisibility = false;
-            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
-            PasswordInput = InputType.Password;
-        }
-        else
-        {
-            PasswordVisibility = true;
-            PasswordInputIcon = Icons.Material.Filled.Visibility;
-            PasswordInput = InputType.Text;
-        }
-    }
-
-    private async Task OnValidSubmit()
-    {
-        myImageClass = "d-block";
-        disableButton = true;
-        var result = await _usuarioServicio.IniciarSesion(usuarioLogin);
-
-        if (result.status)
-            _navigationManager.NavigateTo("/page/dashboard");
-        else
-        {
-            myImageClass = "d-none";
-            disableButton = false;
-            myAlert = "d-block";
-        }
-    }
+    
 }
