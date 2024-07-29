@@ -1,44 +1,43 @@
 ﻿@page "/"
-@inject NavigationManager _navigationManager
 
 @layout LoginLayout
 
-<EditForm Model="@usuarioLogin" OnValidSubmit="OnValidSubmit">
+<div>
 
-    <DataAnnotationsValidator></DataAnnotationsValidator>
 
     <MudText Typo="Typo.h4" GutterBottom="true" Align="Align.Center">Bienvenido</MudText>
 
 
     <MudTextField 
         T="string" 
-        @bind-Value="@usuarioLogin.Correo" 
         Label="Correo" 
         Variant="Variant.Outlined" 
-        Class="my-6"
-        For="@(() => usuarioLogin.Correo)">
+        Class="my-6">
     </MudTextField>
 
-    <MudTextField 
-        @bind-Value="@usuarioLogin.Password" 
-        Label="Contraseña" 
-        Variant="Variant.Outlined" 
-        InputType="@PasswordInput" 
-        Adornment="Adornment.End" 
-        AdornmentIcon="@PasswordInputIcon" 
-        OnAdornmentClick="TogglePasswordVisibility"
-                  For="@(() => usuarioLogin.Password)" />
+    <MudTextField T="string"
+                  InputType="InputType.Password"
+                  Label="Contraseña"
+                  Variant="Variant.Outlined" 
+                  Required="true"
+                  RequiredError="Contraseña es requerida!"
+                  Class="my-6">
+    </MudTextField>
 
-    <MudButton Class="mt-5" Variant="Variant.Filled" Color="Color.Info" ButtonType="ButtonType.Submit" Size="Size.Large"
-               FullWidth="true"
-               Disabled="@disableButton">Iniciar Sesión</MudButton>
+
+   
+   
+        <a href="/page/inicio">
+            <MudButton Class="mt-5" Variant="Variant.Filled" Color="Color.Info" ButtonType="ButtonType.Submit" Size="Size.Large"
+                       FullWidth="true">Iniciar Sesión</MudButton>
+        </a>
+
+
+
     
-    <MudProgressLinear Color="Color.Info" Indeterminate="true" Class="@(myImageClass + " my-7")" />
-</EditForm>
-
-<MudAlert Severity="Severity.Error" Class="@(myAlert + " mt-8 mud-width-full")" Style="max-width:500px;" Elevation="25">No se encontraron coincidencias</MudAlert>
-
+</div>
 
 @code {
+    
     
 }

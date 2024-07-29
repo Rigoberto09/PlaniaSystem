@@ -23,8 +23,4 @@
     <ItemGroup>
       <ProjectReference Include="..\Client\SistemaPlania.Client.csproj" />
       <ProjectReference Include="..\Shared\SistemaPlania.Shared.csproj" />
-    </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Servicios\Usuario\" />
-  </ItemGroup></Project>
+    </ItemGroup></Project>

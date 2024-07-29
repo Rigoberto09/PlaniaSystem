@@ -1,12 +1,9 @@
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-using SistemaPlania.Client.Servicios.Implementacion;
 using SistemaPlania.Server.DataBase;
 using SistemaPlania.Server.Email;
 using SistemaPlania.Server.Models;
-using SistemaPlania.Server.Repositorio.Contrato;
-using SistemaPlania.Server.Repositorio.Implementacion;
 using SistemaPlania.Server.Utilidades;
 
 using SistemaPlania.Server.ConsultasDB;
@@ -30,14 +27,6 @@ builder.Services.AddDbContext<DbventaBlazorContext>(options =>
 //var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Planias.db");
 //builder.Services.AddScoped<UsuarioDB>(provider => new UsuarioDB(dbPath));
 
-
-
-builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
-builder.Services.AddScoped<IRolRepositorio, RolRepositorio>();
-builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
-builder.Services.AddScoped<IProductoRepositorio, ProductoRepositorio>();
-builder.Services.AddScoped<IVentaRepositorio, VentaRepositorio>();
-builder.Services.AddScoped<IDashBoardRepositorio, DashBoardRepositorio>();
 // Registro del servicio Email
 builder.Services.AddScoped<Email>();
 
