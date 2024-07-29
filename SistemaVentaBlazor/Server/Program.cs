@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using SistemaPlania.Server.DataBase;
 using SistemaPlania.Server.Email;
-using SistemaPlania.Server.Models;
-using SistemaPlania.Server.Utilidades;
+//using SistemaPlania.Server.Models;
 
 using SistemaPlania.Server.ConsultasDB;
 
@@ -20,8 +19,8 @@ builder.Services.AddRazorPages();
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
 //});
 //conexcion a base de datos local
-builder.Services.AddDbContext<DbventaBlazorContext>(options =>
-    options.UseSqlite($"Data Source={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Planias.db")}"));
+//builder.Services.AddDbContext<BaseDatos>(options =>
+//    options.UseSqlite($"Data Source={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Planias.db")}"));
 
 // Registro del servicio
 //var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Planias.db");
