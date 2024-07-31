@@ -14,22 +14,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-//builder.Services.AddDbContext<DbventaBlazorContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
-//});
-//conexcion a base de datos local
-//builder.Services.AddDbContext<BaseDatos>(options =>
-//    options.UseSqlite($"Data Source={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Planias.db")}"));
-
-// Registro del servicio
-//var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Planias.db");
-//builder.Services.AddScoped<UsuarioDB>(provider => new UsuarioDB(dbPath));
-
 // Registro del servicio Email
 builder.Services.AddScoped<Email>();
 
 var app = builder.Build();
+// Inicializar la base de datos
+BaseDatos.Inicializar();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

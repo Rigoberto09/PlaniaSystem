@@ -11,6 +11,7 @@
     <MudTextField T="string"
                   Label="Correo"
                   Variant="Variant.Outlined"
+                  @bind-Value="correo"
                   Class="my-6">
     </MudTextField>
 
@@ -19,22 +20,23 @@
                   Label="Contraseña"
                   Variant="Variant.Outlined"
                   Required="true"
+                  @bind-Value="contra"
                   RequiredError="Contraseña es requerida!"
                   Class="my-6">
     </MudTextField>
 
 
-    <a href="/page/inicio">
-        <MudButton Class="mt-5" Variant="Variant.Filled" Color="Color.Info" ButtonType="ButtonType.Submit" Size="Size.Large"
+    @* <a href="/page/inicio"> *@
+        <MudButton Class="mt-5" Variant="Variant.Filled" Color="Color.Info" @onclick="()=>mostrarConexcionDataBase(correo, contra)" ButtonType="ButtonType.Submit" Size="Size.Large"
                    FullWidth="true">Iniciar Sesión</MudButton>
+    @* </a> *@
+
+    <a href="/page/inicio">
+    <MudButton Class="mt-5" Variant="Variant.Filled" Color="Color.Info" ButtonType="ButtonType.Submit" Size="Size.Large"
+               FullWidth="true">Iniciar Sin validaciones</MudButton>
     </a>
 
 
 
 
 </div>
-
-@code {
-
-
-}
